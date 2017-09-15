@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/fastweixin-1.3.2.jar" sourcepath="C:/Users/lenovo/AppData/Local/Temp/decompiler/source/fastweixin-1.3.2-sources-1502781644218.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
