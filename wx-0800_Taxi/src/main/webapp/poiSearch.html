@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="css/weui.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<title>关键字输入提示</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			input,
+			select {
+				font: 12px/20px Verdana, Helvetica, Arial, sans-serif;
+			}
+			
+			span {
+				font-size: 20px;
+			}
+		</style>
+		<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp&libraries=place"></script>
+		<script>
+			function init() {
+
+				var map = new qq.maps.Map(document.getElementById("container"), {
+					//center:  new qq.maps.LatLng(39.916527,116.397128),
+					//zoom: 13
+				});
+				//实例化自动完成
+				var ap = new qq.maps.place.Autocomplete(document.getElementById('place'));
+				//调用Poi检索类。用于进行本地检索、周边检索等服务。
+				var searchService = new qq.maps.SearchService({
+					map: map
+				});
+				//添加监听事件
+				qq.maps.event.addListener(ap, "confirm", function(res) {
+					searchService.search(res.value);
+					//alert('---' + res.value);
+					$('#addr2', window.parent.document).val(res.value);
+					$('#poiPage', window.parent.document).attr("style", "display: none;");
+					$('#form1', window.parent.document).attr("style", "display: inline;");
+				});
+			}
+		</script>
+	</head>
+
+	<body onload="init()">
+		<div class="weui-cell">
+			<div class="weui-cell__bd">
+				<input class="weui-input" type="text" id="place" placeholder="您要去哪儿" style="height: 30px;font-size: 23px;" />
+			</div>
+		</div>
+	</body>
+
+</html>
